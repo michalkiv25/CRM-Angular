@@ -1,0 +1,84 @@
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title glyphicon glyphicon-user" id="titleCustomer"> Customers </h3>
+  </div>
+  <div class="panel-body">
+    <div *ngIf="displayMode == DisplayModes.table">
+      <div class="div-filter">
+        <input [(ngModel)]="searchFirst" class="input-filter" type="text" placeholder="First Name" />
+        <input [(ngModel)]="searchLast" class="input-filter" type="text" placeholder="Last Name" />
+        <input [(ngModel)]="searchPhone" class="input-filter" type="text" placeholder="Phone Name" />
+        <input [(ngModel)]="searchEmail" class="input-filter" type="text" placeholder="Email" />
+        <button class=" btn btn-danger btn-lg glyphicon glyphicon-plus" (click)="addCustomer()" id="buttonAddCustomer">
+          Add customer
+        </button>
+      </div>
+
+      <table class="table" id="table">
+        <thead>
+          <tr>
+            <!-- Title table  -->
+            <th scope="col">Number</th>
+            <th scope="col">No.</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers;
+  let num = index;">
+            <ng-container *ngIf="!filterCustomer(customer)">
+              <th scope="row">
+                {{num+1}}
+                <!-- number table -->
+              </th>
+              <td>
+                <table-icons (display)="displayCustomerDetails(customer)" (edit)="editCustomer(customer)"
+                  (remove)="removeCustomer(customer)">
+                </table-icons>
+              </td>
+              <td>{{customer.first}}</td>
+              <td>{{customer.last}}</td>
+              <td>{{customer.phone}}</td>
+              <td>{{customer.email}}</td>
+            </ng-container>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="displayMode == DisplayModes.details">
+      <app-add-edit-display-customer [disabled]="true" [customer]="currentCustomer">
+      </app-add-edit-display-customer>
+    </div>
+
+    <div *ngIf="displayMode == DisplayModes.add" class="divCreateCustomer">
+      <app-add-edit-display-customer [customer]="currentCustomer">
+      </app-add-edit-display-customer>
+      <button (click)="createCustomer()" id="CreateCustomer" class="btn btn-danger btn-lg">
+        Create Customer
+      </button>
+    </div>
+
+    <div *ngIf="displayMode == DisplayModes.edit">
+      <app-add-edit-display-customer [customer]="currentCustomer">
+      </app-add-edit-display-customer>
+      <div id="buttonUpdate">
+        <button id="buttonEdit" class="buttonUpdate" (click)="updateCustomer()" class="btn btn-danger btn-lg">
+          Update
+        </button>
+      </div>
+    </div>
+
+    <!--back-->
+    <div id="buttonBack">
+      <button id="buttonEdit" (click)="displayMode = DisplayModes.table " class="btn btn-danger btn-lg"
+        *ngIf="displayMode !=  DisplayModes.table">
+        Back
+      </button>
+    </div>
+
+  </div>
+</div>

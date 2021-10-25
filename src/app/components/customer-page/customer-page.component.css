@@ -1,0 +1,47 @@
+#titleCustomer {
+  font-size: 35px;
+  text-shadow: 3px 3px 5px;
+  margin-left: 700px;
+}
+
+.div-filter {
+  padding: 10px;
+  margin: 10px;
+
+}
+
+.input-filter {
+  width: 200px;
+  height: 40px;
+  margin: 20px;
+  font-size: 15px;
+  padding: 10px;
+}
+
+#table {
+  margin-top: 100px;
+}
+
+#buttonBack,
+#buttonUpdate {
+  margin-top: 15px;
+  float: right;
+  margin-left: 10px;
+}
+
+#buttonEdit {
+  width: 100px;
+  height: 40px;
+}
+
+#buttonAddCustomer {
+  text-shadow: 3px 3px 7px;
+  font-size: 20px;
+}
+
+#CreateCustomer {
+  width: 200px;
+  text-shadow: 3px 3px 7px;
+  font-size: 20px;
+
+}

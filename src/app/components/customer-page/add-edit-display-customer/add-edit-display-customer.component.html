@@ -1,0 +1,30 @@
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>First name </label>
+      <input [disabled]="disabled" name="first" [(ngModel)]="customer.first" type="text" class="form-control" />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Last Name</label>
+      <input [disabled]="disabled" type="text" [(ngModel)]="customer.last" name="last" class="form-control" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Email </label>
+      <input [disabled]="disabled" name="email" [(ngModel)]="customer.email" type="email" class="form-control" />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Phone</label>
+      <input [disabled]="disabled" name="phone" [(ngModel)]="customer.phone" type="phone" class="form-control" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Address</label>
+    <input [disabled]="disabled" type="text" name="address" [(ngModel)]="customer.address" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Notes</label>
+    <textarea [disabled]="disabled" name="notes" [(ngModel)]="customer.notes" class="form-control" rows="10"></textarea>
+  </div>
+</form>

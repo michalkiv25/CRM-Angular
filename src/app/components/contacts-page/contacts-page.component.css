@@ -1,0 +1,35 @@
+#titleCustomer {
+  font-size: 35px;
+  text-shadow: 3px 3px 5px;
+  text-align: center;
+  margin-left: 700px;
+}
+
+.div-filter {
+  padding: 10px;
+  margin: 10px;
+}
+
+.input-filter {
+  width: 400px;
+  height: 40px;
+  margin: 20px;
+  font-size: 15px;
+  padding: 10px;
+}
+
+#table {
+  margin-top: 50px;
+}
+
+#buttonBack,
+#buttonUpdate {
+  margin-top: 15px;
+  float: right;
+  margin-left: 10px;
+}
+
+#buttonEdit {
+  width: 100px;
+  height: 40px;
+}

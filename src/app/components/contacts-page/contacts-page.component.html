@@ -1,0 +1,50 @@
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title glyphicon glyphicon glyphicon-envelope" id="titleCustomer"> Contact </h3>
+  </div>
+  <div class="panel-body">
+    <div *ngIf="displayMode == DisplayModes.table">
+      <div class="div-filter">
+        <input [(ngModel)]="searchFirst" class="input-filter" type="text" placeholder="First Name" />
+
+      </div>
+      <table class="table" id="table">
+        <thead>
+          <tr>
+            <!-- Title table  -->
+            <th scope="col">Number</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date of birth</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers; let num = index;">
+            <ng-container *ngIf="!filterCustomer(customer)">
+              <th scope="row">
+                {{num+1}}
+                <!-- number table -->
+              </th>
+              <td>{{customer.first}}</td>
+              <td>{{customer.address}}</td>
+              <td>{{customer.phone}}</td>
+              <td>{{customer.email}}</td>
+              <td>{{customer.data}}</td>
+            </ng-container>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!--back-->
+    <div id="buttonBack">
+      <button id="buttonEdit" (click)="displayMode = DisplayModes.table " class="btn btn-danger btn-lg"
+        *ngIf="displayMode !=  DisplayModes.table">
+        Back
+      </button>
+    </div>
+
+  </div>
+</div>

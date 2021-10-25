@@ -1,0 +1,12 @@
+<div class="sidenav">
+  <p>CRM</p>
+  <a routerLink="customers" class="glyphicon glyphicon-user">Customers</a>
+  <a routerLink="contacts" class="glyphicon-envelope"> Contacts</a>
+</div>
+
+<div class="main">
+  <!-- רוטר -->
+  <router-outlet>
+  </router-outlet>
+  <button *ngIf="isLoggedIn" (click)="logout()" id="logout" class="btn btn-danger btn-lg"> Log out</button>
+</div>

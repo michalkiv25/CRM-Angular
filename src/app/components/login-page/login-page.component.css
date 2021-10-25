@@ -1,0 +1,23 @@
+#detailMainScreen {
+  width: 75%;
+  display: grid;
+  justify-content: center;
+  margin-top: 250px;
+  margin-left: 250px;
+}
+
+input {
+  width: 300px;
+}
+
+#login {
+  width: 200px;
+  margin-left: 200px;
+  text-shadow: 3px 3px 7px;
+  font-size: 20px;
+
+}
+
+#mesUserName {
+  font-size: 12px;
+}

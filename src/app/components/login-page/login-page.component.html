@@ -1,0 +1,27 @@
+<form ngForm #formStatus="ngForm" id="detailMainScreen">
+  <div class="form-row">
+
+    <div class="form-group col-md-6" id="UserName">
+      <label>User name: </label>
+      <input ngModel required #refUserName="ngModel" #username name="first" type="text" class="form-control"
+        placeholder="User name" />
+      <br>
+      <span id="mesUserName" *ngIf="refUserName.touched && refUserName.invalid" class="alert alert-danger">
+        User name Is required
+      </span>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label> Password:</label>
+      <input #pass type="text" name="last" class="form-control" placeholder="Password" />
+    </div>
+
+  </div>
+
+  <div class="form-row ">
+    <button id="login" [disabled]="formStatus.invalid" (click)="login(username.value,pass.value)" type="button"
+      class="btn btn-danger btn-lg">Login</button>
+    <!-- Makes the button impossible to press if there is no information -->
+  </div>
+
+</form>
